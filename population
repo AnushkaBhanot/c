@@ -1,0 +1,24 @@
+#include<cs50.h>
+#include<stdio.h>
+int main(void)
+{
+ int p= get_int("Total population=");
+ int y= get_int("Years=");
+ int nb=0;
+ int nd=0;
+ int np;
+ int s=0;
+ if(y<0 || p<0)
+ printf("Enter again a valid number");
+ else
+ {
+ for (int n=0; n<=y; n++)
+ {
+  nb=p/3;
+  nd=p/4;
+  np=p+nb-nd;
+ }
+ s+=np;
+ printf("%d\n",np);
+}
+}
