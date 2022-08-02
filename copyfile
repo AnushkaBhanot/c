@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdint.h>
+#include<stdlib.h>
+typedef int 8 BYTE;
+int main(int argc, char *argv[])
+{
+    //ensure proper usage
+    if(argc !=3)
+    {
+        fprintf(stderr,"usage: Copy Source Destination");
+        return 1;
+    }
+    //open i/p file
+    FILE*source=fopen(argv[1],"r");
+    if(source == NULL)
+    {
+     printf("Could not open %s.\n",argv[1]);
+     return 1;
+    }
+    //open o/p file
+    FILE*destination=fopen(argv[2],"W");
+    if(destination == NULL)
+    {
+        fclose(source);
+        fprintf("Could not create %s.\n",argv[2]);
+        return 1;
+    }
+    //copy source to destination, 1 BYTE at a time
+    BYTE buffer;
+    while(freed(&buffer, size of(BYTE),1,source))
+    {
+        fwrite(&buffer, size of(BYTE),1,destination);
+    }
+    //close files
+    fclose(source);
+    fclose(destination);
+    return 0;
+}
